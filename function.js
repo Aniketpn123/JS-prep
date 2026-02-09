@@ -1,3 +1,51 @@
+// arrow function
+
+let func = (a1,a2,a3)=> { console.log("a");
+    return console.log("b");
+}
+
+let sum1 = a => a+5;
+ 
+sum1(2,4);
+
+let ask = (que, yes , no) =>{
+    if(consfirm(que)) yes();
+    else no;
+}
+
+ask("do u", (a)=>{a},(b)=>{b});
+
+// function expression   (function is a value)
+// function an perceived as action
+
+// function expression
+let sayHi = function (){
+    console.log('hi');  
+};
+
+console.log(sayHi);
+
+let fun = sayHi;
+
+console.log(fun);
+
+//  ...........................
+
+// anonymous function
+
+
+// function decleration
+// function ask(question, yes, no) {
+//   if (confirm(question)) yes()
+//   else no();
+// }
+
+// ask(
+//   "Do you agree?",
+//   function() { alert("You agreed."); },
+//   function() { alert("You canceled the execution."); }
+// );
+
 function showMessage(){
     console.log(
         'hello'
@@ -110,11 +158,11 @@ showMovie(19);
 
 // ..................................
 
-function doNothing(){
-    return (some + long +experession * f(a) + f(b));
-}
+// function doNothing(){
+//     return (some + long +experession * f(a) + f(b));
+// }
 
-console.log(doNothing() === undefined);
+// console.log(doNothing() === undefined);
 
 // ..................................
 
