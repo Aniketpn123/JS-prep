@@ -139,5 +139,83 @@ let arr2 = [ 1,2,15];
 
 console.log(arr2.sort(compareNum));
 
+// ..........................................
+console.log("...............................");
+
+// reverse 
+
+let arr3 = [1,3,4,5,6,45,55,5,35,35];
+arr3.reverse();
+console.log(arr3);
 
 
+// split and join
+console.log("...............................");
+let names ='aniket,purusshottam , nakahate , my ,class  ,is';
+let arr4 = names.split(',' ,2);
+
+for (let name of arr4){
+    console.log(`A message to ${name}.`);
+}
+
+let str = arr4.join(';');
+
+console.log(str);
+
+
+/// reduce . reduce Right
+
+// let value = arr.reduce(function(accumulator,item,index,array){}, [inital]);
+
+let arr6 =[1,2,3,4,5,6,7];
+
+let result2= arr6.reduce((sum,current) => sum + current , 0);
+console.log(result2);
+
+
+// Array.isArray
+
+console.log(typeof {});
+
+console.log(Array.isArray([]));
+
+// arr.find(function(){} , thisArg);
+// arr.filter(function(){} , thisArg);
+// arr.map(function(){} , thisArg);
+
+// tasks
+
+
+
+let arr1= [1,2,34,56,6,6];
+
+console.log(arr1.map((no,index)=> no > 0 ? 2: 5
+).join('').slice(1));
+
+
+//1.
+function camelize(str){
+    return console.log( str.split('-').map((word , index) => index == 0 ? word : word[0].toUpperCase() +word.slice(1)).join(''));
+    
+}
+
+camelize("background-color");
+
+/// 2.
+
+function filterRange(arr,a,b){
+    console.log(arr.filter(item => (item >= a && item <= b)));
+
+}
+
+filterRange([5, 3, 8, 1],1,4);
+
+//3 .
+
+let arr7 = ["HTML", "JavaScript", "CSS"];
+
+function copySorted(arr){
+   console.log(arr.sort());
+   
+}
+copySorted(arr7);
