@@ -61,4 +61,118 @@ console.log( 'name' in user5  , 'ani' in user5, myName in user5,
     user5.test  , 'test' in user5
 );
 
+console.log("...................");
 
+// (for.. in) loop
+
+let obj1 =
+{
+  name: 'john',
+  age : 30,
+  isadmin: true,
+    49: "Germany",
+  "4.1": "Switzerland",
+  "44": "Great Britain",
+  // ..,
+  "1": "USA"
+};
+
+for(let key in obj1)
+{
+    console.log(key);
+    console.log(obj1[key]);
+}
+
+let obj2 ={
+    age: 34,
+    name: "aniekt",
+}
+
+obj2.user = "ani";
+
+for(let obj in obj2){
+    console.log(obj);
+    
+}
+
+let codes = {
+  "+49": "Germany",
+  "+41": "Switzerland",
+  "+44": "Great Britain",
+  // ..,
+  "+1": "USA"
+};
+
+for(let code in codes){
+    console.log(+code);
+    
+}
+
+
+
+/////    tasks
+console.log("...............");
+
+
+let user7 ={
+        name : "John",
+        surname : "smith",
+};
+
+user7.name = "Pete";
+delete user7.name;
+
+//2. 
+
+function isEmpty(obj){
+    for(let item in obj){
+
+        return true;
+    }
+    return true;
+}
+let schedule ={};
+
+isEmpty(schedule);
+
+schedule["3.34"]= "get up";
+
+isEmpty(schedule);
+
+// 3.  
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+function salary(salaries){
+    let sum =0;
+   for (let item in salaries)
+   {
+     sum += salaries[item];
+   }
+   console.log(sum);
+   
+}
+
+salary(salaries);
+
+
+// 4.  
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+function multi(menu){
+  for(let item in menu){
+    if( typeof menu[item] == 'number')
+    {
+     menu[item] = 2*menu[item];
+  }
+}
+  console.log(menu);
+  
+}
+multi(menu);
