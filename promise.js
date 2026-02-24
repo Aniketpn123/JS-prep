@@ -198,4 +198,143 @@ new Promise(resolve => resolve(1)).then(result => {
 
 // fetch 
 
+promise = fetch(url);
+
+// request a object info bu url and give promise , promise response with object,remote server response with headers   for reading response wee have to call response.text(); it return promise
+
+fetch('/article/promise-chaining/user.json')
+.then(function(response){
+    return Response.text();
+})
+.then(function(text){
+    console.log(text); 
+})
+
+// when Response.text runs it runs response.json() give json
+
+fetch('/article/promise-chaining/user.json')
+.then(response => response.json()).then(user => console.log(user.name)
+)
+
+fetch('/article/promise-chaining/user.json').then(response => response.json()).then(user=> fetch(`https://api.github.com/users/${user.name}`))
+.then(response => response.json()).then(githubUser=>{
+    let img = document.createElement('img');
+    img.src =githubUser.avatar_url;
+    img.className="avatar";
+    document.body.append(img);
+
+    setTimeout(()=> img.remove(),3000);
+})
+
+fetch('/article/promise-chaining/user.json')
+  .then(response => response.json())
+  .then(user => fetch(`https://api.github.com/users/${user.name}`))
+  .then(response => response.json())
+  .then(githubUser => new Promise(function(resolve, reject) { 
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+
+    setTimeout(() => {
+      img.remove();
+      resolve(githubUser); 
+    }, 3000);
+  }))
+ 
+  .then(githubUser => alert(`Finished showing ${githubUser.name}`));
+
+  function loadJson(url){
+    return fetch(url)
+    .then(response => response.json());
+  }
+
+  function loadGitUser(name){
+    return loadJson(`https://api.github.com/users/${name}`);
+  }
+
+  function showAvatar(githubUser)
+  {
+    console.log('i');
+    
+  }
+
+
+
+//  error handling wiht promises
+
+fetch('https://no-such-server.blabla')
+.then(response => response.json())
+.catch(error => console.log('erroor')
+)
+
+fetch('/article/promise-chaining/user.json')
+.then(response => response.json())
+.then(user => fetch(`https://api.github.com/users/${user.name}`))
+.then(response => response.json())
+.then(githubUser => new Promise((resolve,reject)=>{
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className ="avatr";
+    document.body.append(img);
+
+    setTimeout(()=>{
+        img.remove();
+        resolve(githubUser);
+    } ,3000)
+
+}))
+.catch(
+    error=> console.log('error')
+)
+
+
+// rethrowing
+
+
+
+new Promise((resolve,reject)=>{
+    throw new Error('error');
+}).catch(function (error){
+    console.log('error is jandled');
+}).then(()=>console.log('next handler runs')
+);
+
+new Promise((resolve,reject)=>{
+    throw new Error('error');
+}).catch(function(error)
+{
+    if(error instanceof URIError){
+
+    }
+    else{
+        console.log('cant handle');
+    }
+})
+.then(function(){
+
+}).catch(error => {
+    console.log(`${error}`);  
+})
+
+// unhalled rejection
+
+new Promise(function(){
+    noSuchFunction();
+})
+.then(()=> {
+
+})
+
+
+// when error is not handle it gives mesg in console
+
+window.addEventListener('unhandledrejection',function(e){
+    console.log(e.promise);
+    console.log(e.reason);
+});
+
+new Promise(function(){
+    throw new Error('error');
+})
 
