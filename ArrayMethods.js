@@ -235,5 +235,10 @@ arr.map((a => a * 2));
 
 
 arr.filter(x=> x%2 === 0);
-
+arr.filter(element,index,arr);
 // goes through each elemtnt check condn if flase remove   return new arr with might leass elements.
+
+
+arr.reverse();
+
+// only works on arr not str .reverse();
