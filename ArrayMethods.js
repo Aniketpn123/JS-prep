@@ -219,3 +219,21 @@ function copySorted(arr){
    
 }
 copySorted(arr7);
+
+
+
+// map , reduce , filter
+
+arr.reduce((a,b)=> Math.min(a,b));
+
+// it takes first two vlaue from arr, into fun then pass result of it (min)
+//   reduce reduce arr to single arr.
+
+arr.map((a => a * 2));
+
+// gives new array same length  goees thriugh each elements
+
+
+arr.filter(x=> x%2 === 0);
+
+// goes through each elemtnt check condn if flase remove   return new arr with might leass elements.
