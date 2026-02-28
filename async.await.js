@@ -136,13 +136,75 @@ loadJson('https://javascript.info/no-such-user.json')
   async function demoGithubUser() {
     let uset ;
     while(true){
-let name = promt('enter a name' ,'aniket' );
+        let name = promt('enter a name' ,'aniket' );
 
-try{
+    try{
     user =await loadJson(`https://api.github.com/users/${name}`);
     break;
+    }
+    catch(err){
+        if(err instanceof HttpError && err.response.status == 404){
+            console.log("no user");
+        }
+        else{
+            throw err;
+        }
+    }
+
+    }
+
+        console.log(`${user.name}`);
+        return user;
+        
+    }
+
+
+//3.
+
+async function wait(){
+    await new Promise(resolve => setTimeout(resolve,1000));
+
+    return 10;
 }
 
+function f(){
+    wait().then(result => console.log(result)
+    )
 }
 
-  }
+// Dangerous Promise.all
+
+let database;
+
+function connect(){
+    database ={
+        async query(isOk){
+            if(!isOk) throw new Error('failed');
+        }
+    };
+}
+
+function disconnect(){
+    database = null;
+}
+
+function delay(fn, ms){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=> fn().then(resolve,reject),ms);
+    })
+}
+
+async function run(){
+    connect();
+
+    try{
+        await Promise.all([
+            delay(()=> database.query(true),100),
+            delay(()=> database.query(false),100),
+            delay(()=> database.query(false),100),
+        ]);
+    }catch(error){
+        console.log(error);
+    }
+    disconnect();
+}
