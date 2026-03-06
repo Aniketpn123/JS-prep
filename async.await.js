@@ -33,7 +33,7 @@ f();
 
 function f(){
     let promise = Promise.resolve(1);
-    let r = await promise;     // syntax error
+ //   let r = await promise;     // syntax error
 }
 
 async function showAvatar() {
