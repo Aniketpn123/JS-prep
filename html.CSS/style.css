@@ -1,0 +1,50 @@
+/* rem */
+/* em */
+/* root elment
+1rem =16 px  , 2rem =32 px */
+/* font: font-style font varinat font-weight font-size/line-height font family; */
+
+body{
+    background-color:  lightblue;
+}
+
+p{
+    font: italic small-caps bold 16px/2rem "times new Roman",serif;
+}
+
+h1{
+    color: blue;
+    margin-left: 20px;
+    font-variant: small-caps;
+    line-height: 15px;
+    font-size: 10px;
+}
+p{
+    color: red;
+    font: italic bold 30 px serif , times;
+}
+
+.title{
+    color: black;
+    font-size: 18px;
+}
+
+ul{
+   list-style-image:url('img.gif') ;
+}
+
+
+
+
+ /* BOX MODEL */
+
+ .ptag{
+        height:  330px;
+        width: 500px;
+        padding:25px;
+        margin: 50px;
+        border-color: white;
+        border-style: solid;
+        border-width: 15px;
+        background-color: cyan;
+ }
