@@ -1,0 +1,25 @@
+h2{
+    padding: 10px 20px;
+    border: 2px solid black;
+    margin: 2px 4px;
+    font-size: 1rem;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+ul{
+    list-style:circle;
+    font-size: 1rem;
+    background-color: black;
+    padding: 20px;
+   
+}
+li{
+    color: rgb(0, 255, 30);
+    margin: 20px 10px;
+}
+p{
+    padding: 0px;
+    margin: 0px;
+}
