@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <script>
+        document.write("<h1>welcome</h1>");
+    </script>
+</head>
+<body>
+    <h1>welcome</h1>
+    <form action="#" id="form">
+        <input id ="no1" type="text" placeholder="no1" name="no1"> </br>
+        <input id ="no2" type="text" placeholder="no2" name="no2"> </br>
+        <input id ="result" type="text" placeholder="result" name="result"> </br>
+        <input onclick="add()" type="button" name ="btn" value="+">
+        <input onclick="sub()" type="button" name ="btn" value="-">
+        <input onclick="mul()" type="button" name ="btn" value="*">
+        <input onclick="div()" type="button" name ="btn" value="/">
+    </form>
+
+    <script>
+            function value(){
+                  x = document.forms['form'];
+                    let n1 = x.no1.value;
+                    let n2 = x.no2.value;
+            }
+            function add(){ 
+                  value();
+                    let total = parseInt(n1) + parseInt(n2);
+                    x.result.value = total;
+            }
+            function sub(){
+                    x = document.forms['form'];
+                    let n1 = x.no1.value;
+                    let n2 = x.no2.value;
+                 let total = parseInt(n1) - parseInt(n2);
+                    x.result.value = total;
+            }
+            function mul(){
+                value();
+                 let total = parseInt(n1) * parseInt(n2);
+                    x.result.value = total;
+            }
+            function div(){
+                value();
+                 let total = parseInt(n1) / parseInt(n2);
+                    x.result.value = total;
+            }
+            
+          
+    </script>
+</body>
+</html>
