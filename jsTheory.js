@@ -167,5 +167,17 @@ console.log(text);
 // DOM 
 
 
+let pElement =document.getElementsByTagName('p');
+console.log(pElement[0].innerHTML);
+console.log(pElement[3].innerHTML);
+let size=pElement.length;
+for(let i = 0 ; i< size ; i++){
+
+}
+
+
+
+
+
 
 
