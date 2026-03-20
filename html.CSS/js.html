@@ -11,15 +11,39 @@
   </head>
   <body>
     <p class="p1">first p1</p>
-    <p class="p1">second p2<b>getElmentsByClassNam()</b></p>
+    <p class="p1">second p2<b>getElmentsByClassName()</b></p>
+    <p class="p1">p3<b>getElmentsByClassName()</b></p>
+    <hr />
 
+    <br />
+
+    <br />
+
+    <form id="form">
+      FirstName: <input type="text" value="first name" name="fname" /> LastName:
+      <input type="text" value="last name" name="lname" />
+      <input type="submit" value="SUbmit" />
+    </form>
+    <p class="p"></p>
     <script>
-      // let myElements = document.getElementsByClassName('p1');
-      // let text;
+      let myElements = document.getElementsByClassName("p1");
       // document.write(myElements.length);
-      // for(let i =0 ; i < myElements.length ; i++){
-      //     alert(myElements[i].innerHTML);
-      // }
+      for (let i = 0; i < myElements.length; i++) {
+        console.log(myElements[i].innerHTML);
+      }
+
+      console.log("..................................");
+
+      const x = document.forms["form"];
+      let p = document.getElementsByClassName("p");
+      let p1 = document.querySelector(".p");
+      let text=""
+      for (let i = 0; i < x.length; i++) {
+        text += x[i].value;
+      }
+      p.innerHTML= text;
+      p1.innerHTML= text;
+      
     </script>
   </body>
 </html>

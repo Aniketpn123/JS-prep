@@ -176,8 +176,15 @@ for(let i = 0 ; i< size ; i++){
 }
 
 
+ document.querySelector('.p');    // selctes first match element
+ document.querySelectorAll('p');  //  selecte all amcahingelemnts  return NOdeList
+ document.getElementById('id');    // slect one elements by id
+document.getElementsByClassName('class');  // return HTMLcollction if dom changes collciton updates
 
+img.setAttribute('src' ,"ff.img")
 
+document.querySelector('.p').computedStyleMap.fontFamily ="Arial";
+document.querySelector('.p').computedStyleMap.fontSize ="20px";
 
 
 
